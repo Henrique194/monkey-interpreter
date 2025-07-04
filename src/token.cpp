@@ -1,6 +1,6 @@
+#include "token.h"
 #include <iomanip>
 #include <unordered_map>
-#include "token.h"
 
 static const std::unordered_map<TokenType, std::string> type_name_map{
     {TokenType::ILLEGAL, "ILLEGAL"},
@@ -45,7 +45,7 @@ bool Token::operator==(const Token& other) const {
 }
 
 std::ostream& operator<<(std::ostream& out, const TokenType& type) {
-    const auto& entry = type_name_map.find(type);
+    const auto entry = type_name_map.find(type);
     if (entry == type_name_map.end()) {
         throw std::domain_error{"Unknown token type"};
     }

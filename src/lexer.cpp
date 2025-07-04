@@ -75,7 +75,7 @@ std::string Lexer::readUntil(const std::function<bool(char)>& accept_char) {
 }
 
 std::optional<Token> Lexer::readCharToken() {
-    const auto& entry = char_tokens.find(ch);
+    const auto entry = char_tokens.find(ch);
     if (entry == char_tokens.end()) {
         return std::nullopt;
     }
@@ -109,7 +109,7 @@ std::optional<Token> Lexer::readWordToken() {
         return std::nullopt;
     }
     TokenType type;
-    if (const auto& entry = keywords.find(word); entry != keywords.end()) {
+    if (const auto entry = keywords.find(word); entry != keywords.end()) {
         type = entry->second;
     } else {
         type = TokenType::IDENTIFIER;
