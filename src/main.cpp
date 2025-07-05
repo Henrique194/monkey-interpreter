@@ -1,8 +1,4 @@
-#include <filesystem>
-#include <fstream>
 #include "lexer.h"
-
-namespace fs = std::filesystem;
 
 static void test(Lexer& lexer) {
     const std::vector<Token> test{

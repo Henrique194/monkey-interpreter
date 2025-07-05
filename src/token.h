@@ -2,7 +2,6 @@
 #define TOKEN_H
 
 #include <iostream>
-#include <string>
 
 enum class TokenType {
     ILLEGAL,

@@ -1,4 +1,5 @@
 #include "lexer.h"
+#include <fstream>
 #include <unordered_map>
 
 namespace fs = std::filesystem;

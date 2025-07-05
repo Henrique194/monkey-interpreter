@@ -3,7 +3,6 @@
 
 #include "token.h"
 #include <filesystem>
-#include <fstream>
 #include <functional>
 
 class Lexer {
