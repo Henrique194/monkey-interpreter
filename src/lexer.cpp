@@ -1,6 +1,7 @@
 #include "lexer.h"
 #include <fstream>
 #include <unordered_map>
+#include <utility>
 
 namespace fs = std::filesystem;
 
@@ -47,9 +48,12 @@ static std::string readFile(const fs::path& path) {
     return file_content;
 }
 
-Lexer::Lexer(const fs::path& path)
-    : input(readFile(path)), ch('\0'), position(0), read_position(0) {
+Lexer::Lexer(std::string&& input)
+    : input(std::move(input)), ch('\0'), position(0), read_position(0) {
     readChar();
+}
+
+Lexer::Lexer(const fs::path& path) : Lexer{readFile(path)} {
 }
 
 char Lexer::peekChar() const {

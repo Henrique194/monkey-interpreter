@@ -1,4 +1,6 @@
 #include "lexer.h"
+#include "repl.h"
+#include <cstring>
 
 static void test(Lexer& lexer) {
     const std::vector<Token> test{
@@ -53,8 +55,21 @@ static void test(Lexer& lexer) {
     std::cout << "tests - passed." << std::endl;
 }
 
-int main() {
-    const auto filename = "main.mky";
+static bool useRepl(const int argc, char** argv) {
+    for (int i = 0; i < argc; i++) {
+        if (std::strcmp(argv[i], "-repl") == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main(int argc, char** argv) {
+    if (useRepl(argc, argv)) {
+        repl::run();
+        return 0;
+    }
+    const std::filesystem::path filename = "main.mky";
     Lexer lexer{filename};
     test(lexer);
     return 0;

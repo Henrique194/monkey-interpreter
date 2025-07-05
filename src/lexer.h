@@ -20,6 +20,7 @@ class Lexer {
     void skipWhitespaces();
 
   public:
+    explicit Lexer(std::string&& input);
     explicit Lexer(const std::filesystem::path& path);
     Token nextToken();
 };
