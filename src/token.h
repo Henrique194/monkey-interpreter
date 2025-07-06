@@ -37,12 +37,17 @@ enum class TokenType {
     RETURN,
 };
 
-struct Token {
-    const TokenType type;
-    const std::string value;
+class Token {
+    TokenType type;
+    std::string value;
+
+  public:
     Token(TokenType type, std::string value);
     Token(TokenType type, char ch);
+    TokenType getType() const;
+    const std::string& getValue() const;
     bool operator==(const Token& other) const;
+    // Token& Token::operator=(const Token& other);
 };
 
 std::ostream& operator<<(std::ostream& out, const TokenType& type);

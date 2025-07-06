@@ -2,6 +2,8 @@ set(SOURCE_FILES
     lexer.cpp
     lexer.h
     main.cpp
+    parser.cpp
+    parser.h
     repl.cpp
     repl.h
     token.cpp

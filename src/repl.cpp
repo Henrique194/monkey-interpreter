@@ -47,7 +47,7 @@ void repl::run() {
         Lexer lexer{std::move(input)};
         while (true) {
             const auto token = lexer.nextToken();
-            if (token.type == TokenType::END_OF_FILE) {
+            if (token.getType() == TokenType::END_OF_FILE) {
                 break;
             }
             std::cout << token << std::endl;

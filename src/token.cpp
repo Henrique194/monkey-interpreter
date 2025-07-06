@@ -40,9 +40,19 @@ Token::Token(const TokenType type, const char ch)
     : Token{type, std::string{ch}} {
 }
 
+TokenType Token::getType() const {
+    return type;
+}
+
+const std::string& Token::getValue() const {
+    return value;
+}
+
 bool Token::operator==(const Token& other) const {
     return type == other.type && value == other.value;
 }
+
+// Token& Token::operator=(const Token& other) = default;
 
 std::ostream& operator<<(std::ostream& out, const TokenType& type) {
     const auto entry = type_name_map.find(type);
@@ -54,7 +64,7 @@ std::ostream& operator<<(std::ostream& out, const TokenType& type) {
 }
 
 std::ostream& operator<<(std::ostream& out, const Token& token) {
-    out << "Token { type: " << token.type << ", ";
-    out << "value: " << std::quoted(token.value) << " }";
+    out << "Token { type: " << token.getType() << ", ";
+    out << "value: " << std::quoted(token.getValue()) << " }";
     return out;
 }
