@@ -1,6 +1,6 @@
 # Monkey Interpreter
 
-A C++ interpreter for
+A Rsut interpreter for
 the [Monkey programming language](https://monkeylang.org/).
 
 # What’s Monkey?
@@ -17,13 +17,5 @@ syntax. It supports:
 Monkey was originally introduced in the
 book [Writing an Interpreter in Go](https://interpreterbook.com/) by
 Thorsten Ball. The language is designed as a learning tool, and it has inspired
-implementations in many programming languages, this project being a C++
+implementations in many programming languages, this project being a Rust
 version.
-
-## Supported Platforms
-
-| Platform | is supported? |
-|:--------:|:-------------:|
-| Windows  |      yes      |
-|  Linux   |      yes      |
-|  MacOS   |      yes      |
